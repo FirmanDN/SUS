@@ -1,0 +1,427 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  margin: 0;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  font-family: Arial;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
+.header:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #CD5C5C;
+  z-index: 2;
+}
+
+.header__body {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+}
+
+.header__logo {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 70px;
+  border-radius: 50%;
+  background-color: #fff;
+  z-index: 4;
+}
+
+.header__logo img {
+  max-width: 100%;
+  display: block;
+}
+
+.header__list {
+  text-decoration: none;
+  display: flex;
+  position: relative;
+  z-index: 3;
+}
+
+.header__list li {
+  margin: 0 0 0 40px;
+}
+
+.header__link {
+  text-transform: uppercase;
+  color: #ffff99;
+  font-weight: 900;
+  font-size: 25px;
+  font-family: 'Bakbak One', cursive;
+}
+
+li :hover {
+  color: rgb(0, 0, 0);
+  transition: 0.2s;
+}
+
+.header__burger {
+  display: none;
+}
+
+@media(max-width:881px) {
+  .header__link {
+    font-size: 20px;
+  }
+}
+
+
+@media(max-width:845px) {
+  body.lock {
+    overflow: hidden;
+  }
+
+  .header__body {
+    height: 50px;
+  }
+
+  .header__logo {
+    flex: 0 0 40px
+  }
+
+  .header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+    z-index: 4;
+  }
+
+  .header__burger:before {
+    content: ' ';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__burger:after {
+    content: ' ';
+    background-color: #fff;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__burger span {
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    width: 100%;
+    height: 2px;
+    top: 9px
+  }
+
+  .header__burger:before {
+    top: 1px;
+  }
+
+  .header__burger:after {
+    bottom: 0;
+  }
+
+  .header__burger.active span {
+    transform: scale(0);
+  }
+
+  .header__burger.active:before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+
+  .header__burger.active:after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+
+  .header__menu {
+    position: fixed;
+    transition: all 0.3s ease 0s;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 85px 10px 20px 0;
+  }
+
+  .header__menu.active {
+    top: 0;
+    background-color: rgb(196, 80, 80);
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .header__list {
+    display: block;
+  }
+
+  .header__list li {
+    margin: 0 0 20px 0;
+  }
+
+  .header__link {
+    font-size: 40px;
+  }
+}
+
+.main {
+  flex: 1 1 auto;
+  padding: 120px 0 30px 0;
+  background: url(https://i.pinimg.com/originals/64/f5/8d/64f58dcdf9a0f93a9f5d211888ae90e5.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.main__border {
+  margin: 0 auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+@media(max-width:426px) {
+  .container {
+    background-color: rgba(255, 255, 255, 0.65);
+    border-radius: 10px;
+  }
+
+  .main__border {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0;
+  }
+}
+
+.main__row {
+  padding: 0 0 60px 0px;
+}
+
+.SUS__img {
+  flex: 0 0 400px;
+}
+
+.SUS__img img {
+  max-width: 100%;
+}
+
+.main__section {
+  flex: 1 1 auto;
+  padding: 10px 0 0 0;
+}
+
+.main__title {
+  font-size: 36px;
+  color: rgb(152, 168, 3);
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0 30px 0;
+}
+
+.main__text {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.main__text>span {
+  color: rgb(152, 168, 3);
+  font-style: italic;
+}
+
+@media (max-width: 845px) {
+  .SUS__img img {
+    display: block;
+    margin: auto;
+  }
+
+  .imposter__img img {
+    display: block;
+    margin: auto;
+  }
+}
+
+@media (min-width: 845px) {
+  .main__row {
+    display: flex;
+  }
+
+  .main__title {
+    padding: 0 0 30px 0px;
+  }
+
+  .main__section {
+    padding: 0 0 0 15px;
+  }
+
+  .imposter__img {
+    flex: 0 0 359px;
+  }
+}
+
+.imposter__img {
+  flex: 0 0 359px;
+  order: 2;
+}
+
+.imposter__section {
+  order: 1;
+  padding: 0 15px 0 0px;
+  flex: 1 1 auto;
+}
+
+.imposter__title {
+  font-size: 36px;
+  margin: 0;
+  padding: 0 0 30px 0px;
+  color: rgb(224, 47, 47);
+  font-weight: 700;
+}
+
+.imposter__text {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 15px 0 0;
+  padding: 15px 0 0 0;
+}
+
+.imposter__img img {
+  max-width: 100%;
+}
+
+.imposter__text>span {
+  color: rgb(224, 47, 47);
+  font-style: italic;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #000;
+  font-size: 17px;
+  padding: 15px;
+}
+
+.footer__copy {
+  padding: 0 0 10px 0;
+  color: #ffff;
+}
+
+.footer__text {
+  color: #ffff;
+
+}
+
